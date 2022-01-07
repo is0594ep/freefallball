@@ -123,8 +123,8 @@ The time laped from the stat simulation is calulated by count x delta (sec)
 				//Evaluate ball postion on the ground.
 				if(ball.position.y < 0.5 ) {
 					//In this dummy code, stop the ball on the ground.
-					//Ideally, give rebound speed usind RoE and current spped.
-					ball_velocity.y = ball_velocity.y * RoE;
+					//Ideally, give rebound speed usind RoE and current speed.
+					ball_velocity.y = 20 * RoE;
 				}
 
 				//Output current lasped time and position on Javascript console
