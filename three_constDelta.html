@@ -29,6 +29,7 @@
 			var delta = 0.008;				//Delta t of simulation 0.01s
 			var count = 0;					//Counter of simulation 　
 			var RoE=0.7;					//Reflection coefficient of the floor
+			var forBounce = 20; //For bouncing
 
 			//3D envitonment setthing of ThreeJS
 			var scene = new THREE.Scene();
@@ -124,7 +125,8 @@ The time laped from the stat simulation is calulated by count x delta (sec)
 				if(ball.position.y < 0.5 ) {
 					//In this dummy code, stop the ball on the ground.
 					//Ideally, give rebound speed usind RoE and current speed.
-					ball_velocity.y = 20 * RoE;
+					ball_velocity.y = forBounce * RoE;
+					forBounce = forBounce - 4;
 				}
 
 				//Output current lasped time and position on Javascript console
